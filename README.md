@@ -1,8 +1,8 @@
-# EventBank Operations micro-frontend
+# EventBank operations micro-frontend
 
-The operations screen of [EventBank](https://github.com/marcelo-roman/eventbank-platform): every event-store subscription of every service, its checkpoint, how far behind the head it is, and a button to rebuild a read model by replaying all events from the start.
+The operations screen of [EventBank](https://github.com/marcelo-roman/eventbank-platform), for operators: every event-store subscription of the Customers, Accounts, Transfers and Cards services, its checkpoint, how far behind it is, and a button to rebuild a read model from the first event.
 
-It is a [Module Federation](https://module-federation.io) remote of [eventbank-shell](https://github.com/marcelo-roman/eventbank-shell): it exposes `./App`, which the shell mounts at `/projections`. It ships with its own query client and its own styles, and uses the shell's theme for everything shared.
+It is a [Module Federation](https://module-federation.io) remote of [eventbank-shell](https://github.com/marcelo-roman/eventbank-shell): it exposes `./App`, which the shell mounts at `/projections` and renders with an `auth` prop (the signed-in user and a function that returns a fresh access token). Every API call sends that token. It ships with its own query client and styles, and uses the shell's theme for everything shared.
 
 ## Running
 
@@ -13,7 +13,7 @@ pnpm build        # dist/remoteEntry.js is what the shell loads
 pnpm test
 ```
 
-Standalone, the page links the theme from the shell dev server at `http://localhost:5173/theme.css`, so start the shell too for the full look. To run everything at once, use [eventbank-platform](https://github.com/marcelo-roman/eventbank-platform).
+Standalone, the app reads an access token from `localStorage["eventbank.devToken"]` and links the theme from the shell dev server at `http://localhost:5173/theme.css`. To run everything together, with sign-in, use [eventbank-platform](https://github.com/marcelo-roman/eventbank-platform).
 
 ## License
 

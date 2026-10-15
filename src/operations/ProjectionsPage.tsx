@@ -5,8 +5,10 @@ import { formatTime } from '../shared/format';
 import { type SubscriptionStatus } from '../shared/types';
 
 const services = [
+  { key: 'customers', name: 'Customers service' },
   { key: 'accounts', name: 'Accounts service' },
   { key: 'transfers', name: 'Transfers service' },
+  { key: 'cards', name: 'Cards service' },
 ];
 
 const purposes: Record<string, string> = {
