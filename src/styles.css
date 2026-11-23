@@ -7,7 +7,7 @@
 .services {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  gap: 20px;
 }
 
 .subscriptions {
@@ -18,8 +18,8 @@
 .subscription {
   display: grid;
   gap: 12px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
 }
 
 .subscription:last-child {
@@ -36,7 +36,7 @@
   grid-template-columns: auto 1fr;
   gap: 4px 16px;
   margin: 0;
-  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .checkpoint dt {
